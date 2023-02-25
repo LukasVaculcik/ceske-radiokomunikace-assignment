@@ -24,7 +24,7 @@ class Bootstrap
 			->addDirectory(__DIR__)
 			->register();
 
-		$configurator->addConfig($appDir . '/config/main.neon');
+		$configurator->addConfig($appDir . '/app/config/main.neon');
 
 		return $configurator;
 	}
