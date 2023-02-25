@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <title>{ifset metaTitle}{include block metaTitle|stripHtml} | {/ifset} Zvířata světa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="{ifset metaDescription}{include block metaDescription|stripHtml|trim}{/ifset}">
+    <meta name="copyright" content="© {php date('Y')}">
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="Lukáš Vaculčík">
+</head>
+
+<body>
+    <main>
+        {include content}
+    </main>
+</body>
+</html>

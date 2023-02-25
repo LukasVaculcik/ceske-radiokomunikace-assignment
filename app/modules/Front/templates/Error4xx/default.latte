@@ -1,0 +1,12 @@
+{layout '../../../Front/templates/@layout.latte'}
+{define bodyClass}page-error{/define}
+{define metaTitle}Error{/define}
+{define metaDescription}Error{/define}
+
+{block pageContent}
+<section>
+    <h1>Error <small>{$errorCode}</small></h1>
+    <p>Něco se pokazilo</p>
+    <a n:href="Front:Homepage:default">Zpět na domovskou stránku</a>
+</section>
+{/block}
