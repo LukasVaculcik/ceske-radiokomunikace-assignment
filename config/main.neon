@@ -1,15 +1,15 @@
-parameters:
-
+includes:
+	- services.neon
+	- database.neon
+	- database.local.neon
 
 application:
 	errorPresenter: Error
 	mapping:
 		*: [App, Modules\*, Presenters\*Presenter]
 
-
 session:
 	expiration: 14 days
-
 
 di:
 	export:
