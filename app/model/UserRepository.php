@@ -10,6 +10,7 @@ final class UserRepository
     public const
         TABLE_NAME = 'user',
         COLUMN_ID = 'id',
+        COLUMN_ROLE = 'role',
         COLUMN_EMAIL = 'email',
         COLUMN_PASSWORD_HASH = 'password',
         COLUMN_DATE_LOGGED = 'date_logged';
