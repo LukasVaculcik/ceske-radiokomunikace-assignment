@@ -1,0 +1,49 @@
+services:
+  web:
+    image: josefjebavy/debian-apache-php8.1-nette
+    working_dir: /var/www/html
+    environment:
+      - NETTE_DEBUG=1
+    # this fixes permission issues on WSL https://aschmelyun.com/blog/fixing-permissions-issues-with-docker-compose-and-php/
+    command:
+      - /bin/bash
+      - -c
+      - |
+        chmod 777 /var/lib/php/sessions
+        addgroup --gid $GID --system nette
+        adduser --ingroup nette --system --disabled-password --shell /bin/sh --uid $UID nette
+        sed -i "s/APACHE_RUN_USER=www-data/APACHE_RUN_USER=nette/g" /etc/apache2/envvars
+        sed -i "s/APACHE_RUN_GROUP=www-data/APACHE_RUN_GROUP=nette/g" /etc/apache2/envvars
+        /usr/sbin/apache2ctl -D FOREGROUND
+    volumes:
+      - .:/var/www/html
+      - ./site.conf:/etc/apache2/sites-enabled/000-default.conf
+    ports:
+      - 80:80
+
+  db:
+    image: mariadb:10.6
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: default_db
+    volumes:
+      - .docker/mysql:/var/lib/mysql
+      - ./sql/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+
+  composer:
+    image: composer
+    command: ["composer", "install"]
+    volumes:
+      - .:/app
