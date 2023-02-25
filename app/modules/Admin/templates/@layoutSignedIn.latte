@@ -1,0 +1,16 @@
+{layout '@layout.latte'}
+
+{block body}
+    <header>
+        <a n:href="Sign:out">Odhlásit se</a>
+    </header>
+
+    <main>
+        <div n:foreach="$flashes as $flash">
+            <p>{$flash->message}</p>
+        </div>
+
+        {include content}
+    </main>
+
+{/block}
