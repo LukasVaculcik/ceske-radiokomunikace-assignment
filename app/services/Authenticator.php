@@ -19,7 +19,7 @@ class Authenticator implements \Nette\Security\Authenticator
     public function authenticate(string $username, string $password): SimpleIdentity
     {
         $row = $this->userRepository->findUsers()
-            ->where(UserRepository::COLUMN_EMAIL. $username)
+            ->where(UserRepository::COLUMN_EMAIL, $username)
             ->fetch();
 
         if (!$row || !$this->passwords->verify($password, $row[UserRepository::COLUMN_PASSWORD_HASH])) {
