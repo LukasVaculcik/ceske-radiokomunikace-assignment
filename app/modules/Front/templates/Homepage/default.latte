@@ -4,6 +4,12 @@
 
 {block content}
 
-homepage content
+<section>
+    <h1>Zvířata světa</h1>
+    <ul>
+        <li n:foreach="$animals as $animal">{$animal->name}</li>
+    </ul>
+</section>
+
 
 {/block}
