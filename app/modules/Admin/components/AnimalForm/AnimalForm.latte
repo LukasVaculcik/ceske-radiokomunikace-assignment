@@ -1,0 +1,17 @@
+<form n:name="form">
+    {var $fieldName = $form[$control::FIELD_NAME]}
+    {var $fieldSubmit = $form[$control::FIELD_SUBMIT]}
+    
+    <label n:name="$fieldName->getName()">
+        <span>{$fieldName->getCaption()}</span>
+        <input n:name="$fieldName->getName()">
+    </label>
+    
+    <button
+        type="submit"
+        n:name="$fieldSubmit->getName()"
+    >
+        {$fieldSubmit->getCaption()}
+    </button>
+</form>
+

@@ -1,0 +1,18 @@
+<div class="data-list">
+    <p n:if="count($data)==0"><br>Žádné záznamy nebyly nalezeny!</p>
+
+    <ul>
+        <li n:foreach="$data as $row">
+            <span><strong>{$row->name}</strong></span>
+            <a n:href="edit, $row->id">upravit</a>
+            <a n:href="delete, $row->id">smazat</a>
+            <a n:href="toggle, $row->id">
+                {if $row->is_visible}
+                    schovat
+                {else}
+                    zveřejnit
+                {/if}
+            </a>
+        </li>
+    </ul>
+</div>

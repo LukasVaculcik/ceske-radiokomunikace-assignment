@@ -1,0 +1,12 @@
+{layout '../@layoutSignedIn.latte'}
+{define bodyClass}admin-page-animal{/define}
+{define metaTitle}Admin{/define}
+{define metaDescription}Admin{/define}
+
+{block content}
+	<section>
+        <h1>Administrace zvířat</h1>
+        <a n:href="Animal:edit">Vytvořit záznam</a>
+        {control dataList}
+    </section>
+{/block}

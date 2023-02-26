@@ -10,13 +10,13 @@ use Nette\Application\UI\Form;
 final class SignPresenter extends \App\BaseModule\Presenters\BasePresenter
 {
     public function __construct(
-        private SignInFormFactory $signInFactory
+        private readonly SignInFormFactory $signInFactory
     ){}
     
     protected function createComponentSignInForm(): Form
 	{
 		return $this->signInFactory->create(function (): void {
-			$this->redirect('Homepage:default');
+			$this->redirect('Animal:default');
 		});
 	}
 

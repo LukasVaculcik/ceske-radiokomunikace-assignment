@@ -18,7 +18,7 @@ final class RouterFactory
         
         // Admin routes
         $router->withModule('Admin')
-            ->addRoute('admin/<presenter>/<action>[/<id>]', 'Homepage:default');
+            ->addRoute('admin/<presenter>/<action>[/<id>]', 'Animal:default');
 
         // Front routes
         $router->withModule('Front')
