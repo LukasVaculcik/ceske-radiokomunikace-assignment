@@ -1,3 +1,5 @@
 .docker
 config/database.local.neon
 vendor
+node_modules
+www/dist

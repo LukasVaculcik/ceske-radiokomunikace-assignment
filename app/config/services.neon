@@ -15,3 +15,4 @@ search:
 services:
     - App\Router\RouterFactory::createRouter
     - App\Services\Authenticator
+    - App\Services\ViteAssets(%vite.port%, %wwwDir%, %vite.isDockerized%)

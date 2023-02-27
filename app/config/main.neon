@@ -1,7 +1,9 @@
 includes:
     - services.neon
-    - database.neon
+    # - database.neon
     - database.local.neon
+    # - vite.neon
+    - vite.local.neon
 
 application:
     errorPresenter: Error
