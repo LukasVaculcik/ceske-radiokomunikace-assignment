@@ -1,12 +1,12 @@
 {define bodyClass}page-homepage{/define}
-{define metaTitle}Homepage meta title{/define}
-{define metaDescription}Homepage meta description{/define}
+{define metaTitle}Animals of the world{/define}
+{define metaDescription}List of animals{/define}
 
 {block content}
 
 <section>
     <div class="container">
-        <h1 class="textstyle-head-1">Animal of the world</h1>
+        <h1 class="textstyle-head-1">Animals of the world</h1>
         <ul>
             <li n:foreach="$animals as $animal">{$animal->name}</li>
         </ul>

@@ -5,10 +5,10 @@
 
 {block content}
 <section>
-    <div class="container flex flex-col gap-8">
-        <h1 class="textstyle-head-1">Animal Administration</h1>
-        <a n:href="Animal:edit" class="button self-start">Create a record</a>
-        {control dataList}
+    <div class="container flex flex-col gap-12">
+        <h1 class="textstyle-head-1">Administration</h1>
+        {control dataListAnimal title: 'Animals'}
+        {control dataListAnimalType title: 'Animal types'}
     </div>
 </section>
 {/block}

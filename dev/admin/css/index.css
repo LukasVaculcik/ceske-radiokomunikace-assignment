@@ -21,7 +21,8 @@
   }
 
   input[type="text"],
-  input[type="password"] {
+  input[type="password"],
+  select {
     @apply rounded transition focus:ring-green-600 focus:border-green-600;
   }
 
@@ -36,7 +37,7 @@
   }
 
   .textstyle-subhead-1 {
-    @apply text-xl;
+    @apply text-2xl;
   }
 
   .textstyle-label {

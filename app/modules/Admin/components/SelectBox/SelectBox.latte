@@ -1,0 +1,6 @@
+{varType Nette\Forms\Controls\SelectBox $input}
+
+<label n:name="$input->getName()" class="flex flex-col gap-2">
+    <span class="textstyle-label">{$input->getCaption()}</span>
+    <select n:name="$input->getName()"></select>
+</label>

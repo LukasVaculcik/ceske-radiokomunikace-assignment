@@ -1,6 +1,5 @@
 <form n:name="form" class="p-8 border-2 border-green-800 flex flex-col gap-6 rounded-md">
     {include '../InputText/InputText.latte' input: $form[$control::FIELD_NAME]}
-    {include '../SelectBox/SelectBox.latte' input: $form[$control::FIELD_TYPE]}
     {include '../ButtonSubmit/ButtonSubmit.latte'
         input: $form[$control::FIELD_SUBMIT],
         class: 'self-start'
