@@ -8,7 +8,6 @@
 
 ## Development
 
-- (optional) edit `./sql/database_source.mwb` and export the new model to `./sql/init-db.sql`
 - run `npm install` to install frontend dependencies
 - run `docker compose up -d` to start the PHP server
 - chmod 777 for `./temp` and `./log`
