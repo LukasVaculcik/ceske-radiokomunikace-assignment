@@ -5,11 +5,19 @@
 {block content}
 
 <section>
-    <div class="container">
-        <h1 class="textstyle-head-1">Animals of the world</h1>
-        <ul>
-            <li n:foreach="$animals as $animal">{$animal->name}</li>
-        </ul>
+    <div class="container text-center">
+        <h1 class="textstyle-head-1 mb-12">Animals of the world</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div n:foreach="$grid as $type" class="p-8 rounded-md bg-green-600 text-white">
+                <h2 class="textstyle-subhead-1 mb-4 text-bold">{$type[name]}</h2>
+                <p n:if="empty($type[animals])">No animals :(</p>
+                <ul>
+                    <li n:foreach="$type[animals] as $animalId" n:ifset="$animals[$animalId]">
+                        {$animals[$animalId]->name}
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>
 
