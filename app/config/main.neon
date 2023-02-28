@@ -1,5 +1,6 @@
 includes:
     - services.neon
+    - search.neon
     # - database.neon
     - database.local.neon
     # - vite.neon

@@ -1,17 +1,3 @@
-search:
-    front:
-        in: %appDir%/modules/Front/components
-        classes:
-            - *Factory
-    admin:
-        in: %appDir%/modules/Admin/components
-        classes:
-            - *Factory
-    model:
-        in: %appDir%/model
-        classes:
-            - *Repository
-
 services:
     - App\Router\RouterFactory::createRouter
     - App\Services\Authenticator
