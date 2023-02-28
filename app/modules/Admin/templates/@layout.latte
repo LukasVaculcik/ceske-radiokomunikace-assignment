@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <title>{ifset metaTitle}{include block metaTitle|stripHtml} | {/ifset} Zvířata světa</title>
+    <title>{ifset metaTitle}{include block metaTitle|stripHtml} | {/ifset} Animal of the world</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="{ifset metaDescription}{include block metaDescription|stripHtml|trim}{/ifset}">
@@ -10,11 +10,10 @@
     <meta name="author" content="Lukáš Vaculčík">
 
     {$viteAssets->printAdminTags("js/index.js")}
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </head>
 
 <body>
-    <main>
-        {include body}
-    </main>
+    {include body}
 </body>
 </html>

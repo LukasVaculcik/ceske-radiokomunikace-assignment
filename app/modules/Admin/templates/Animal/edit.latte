@@ -1,7 +1,11 @@
 {layout '../@layoutSignedIn.latte'}
-{define metaTitle}Editace záznamu{/define}
+{define metaTitle}Editing a record{/define}
 
 {block content}
-    <a n:href="Animal:default">Zpět na výpis</a>
-    {control animalForm}
+<section>
+    <div class="container flex flex-col gap-8">
+        <a n:href="Animal:default" class="button self-start">Back to list</a>
+        {control animalForm}
+    </div>
+</section>
 {/block}

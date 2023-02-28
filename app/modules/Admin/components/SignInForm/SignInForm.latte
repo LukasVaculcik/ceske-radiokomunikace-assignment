@@ -1,0 +1,6 @@
+<form n:name="form" class="p-8 border-2 border-green-800 flex flex-col gap-6 rounded-md w-min mx-auto">
+    {include '../InputText/InputText.latte' input: $form[$control::FIELD_EMAIL]}
+    {include '../InputText/InputText.latte' input: $form[$control::FIELD_PASSWORD]}
+    {include '../InputCheckbox/InputCheckbox.latte' input: $form[$control::FIELD_REMEMBER]}
+    {include '../ButtonSubmit/ButtonSubmit.latte' input: $form[$control::FIELD_SUBMIT]}
+</form>

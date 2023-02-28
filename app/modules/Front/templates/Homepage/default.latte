@@ -5,10 +5,12 @@
 {block content}
 
 <section>
-    <h1 class="text-red">Zvířata světa</h1>
-    <ul>
-        <li n:foreach="$animals as $animal">{$animal->name}</li>
-    </ul>
+    <div class="container">
+        <h1 class="textstyle-head-1">Animal of the world</h1>
+        <ul>
+            <li n:foreach="$animals as $animal">{$animal->name}</li>
+        </ul>
+    </div>
 </section>
 
 

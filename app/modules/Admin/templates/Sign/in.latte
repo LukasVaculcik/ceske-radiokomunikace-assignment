@@ -1,18 +1,25 @@
 {layout '../@layoutUnsigned.latte'}
 {define bodyClass}admin-page-signin{/define}
-{define metaTitle}Přihlášení{/define}
+{define metaTitle}Admin Login{/define}
 {define metaDescription}{/define}
 
 {block content}
     <section>
-    	{control signInForm}
+    	<div class="container">
+            <h1 class="textstyle-head-1 mb-12 text-center">Administration login</h1>
+            {control signInForm}
+        </div>
     </section>
 
     <section>
-        <p>Example credentials</p>
-        <p>
-            Email: <strong>admin@admin.cz</strong><br>
-            Password: <strong>admin</strong>
-        </p>
+        <div class="container">
+            <div class="w-max mx-auto">
+                <h2 class="textstyle-subhead-1 mb-4">Example credentials</h2>
+                <p>
+                    Email: <strong>admin@admin.cz</strong><br>
+                    Password: <strong>admin</strong>
+                </p>
+            </div>
+        </div>
     </section>
 {/block}

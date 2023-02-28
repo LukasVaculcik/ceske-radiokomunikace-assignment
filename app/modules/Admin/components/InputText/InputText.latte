@@ -1,0 +1,6 @@
+{varType Nette\Forms\Controls\TextInput $input}
+
+<label n:name="$input->getName()" class="flex flex-col gap-2">
+    <span class="textstyle-label">{$input->getCaption()}</span>
+    <input n:name="$input->getName()">
+</label>

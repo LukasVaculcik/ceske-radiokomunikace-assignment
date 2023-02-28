@@ -9,10 +9,12 @@ use Nette\Application\UI\Control;
 use Nette\Application\UI\Form;
 use Nette\Database\Table\ActiveRow;
 
-class AnimalForm extends Control {
+class AnimalForm extends Control
+{
 
-    public const FIELD_NAME = "name";
-    public const FIELD_SUBMIT = "submit";
+    public const
+        FIELD_NAME = "name",
+        FIELD_SUBMIT = "submit";
 
     public $onSuccess = null;
     public $onError = null;
@@ -22,8 +24,7 @@ class AnimalForm extends Control {
         private readonly ?ActiveRow $defaultValues,
         $onSuccess,
         $onError
-    )
-    {
+    ) {
         $this->onSuccess = $onSuccess;
         $this->onError = $onError;
     }
@@ -38,12 +39,12 @@ class AnimalForm extends Control {
     {
         $form = new Form();
 
-        $form->addText(self::FIELD_NAME, 'Název zvířete')
+        $form->addText(self::FIELD_NAME, 'Animal name')
             ->setRequired(true);
 
-        $form->addSubmit(self::FIELD_SUBMIT, 'Uložit');
+        $form->addSubmit(self::FIELD_SUBMIT, 'Save');
 
-        if($this->defaultValues){
+        if ($this->defaultValues) {
             $form->setDefaults($this->defaultValues);
         }
 
@@ -52,7 +53,7 @@ class AnimalForm extends Control {
                 ($this->onSuccess)($values);
             }
         };
-        
+
         return $form;
     }
 }

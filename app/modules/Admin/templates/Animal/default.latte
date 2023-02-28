@@ -4,9 +4,11 @@
 {define metaDescription}Admin{/define}
 
 {block content}
-	<section>
-        <h1>Administrace zvířat</h1>
-        <a n:href="Animal:edit">Vytvořit záznam</a>
+<section>
+    <div class="container flex flex-col gap-8">
+        <h1 class="textstyle-head-1">Animal Administration</h1>
+        <a n:href="Animal:edit" class="button self-start">Create a record</a>
         {control dataList}
-    </section>
+    </div>
+</section>
 {/block}

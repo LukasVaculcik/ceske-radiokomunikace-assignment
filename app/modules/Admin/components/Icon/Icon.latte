@@ -1,0 +1,14 @@
+{varType string $key}
+{varType string $class}
+
+{default $class = null}
+
+<svg
+  n:class="'flex-shrink-0 fill-current inline-block max-w-full max-h-full', $class"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  width="24"
+  aria-hidden="true"
+>
+  <use xlink:href="{$basePath}/dist/admin/sprite.svg#{$key}"></use>
+</svg>

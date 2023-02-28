@@ -8,8 +8,8 @@
     "prebuild": "node scripts/cleanTemp.js",
     "prestart:admin": "node scripts/cleanTemp.js",
     "prebuild:admin": "node scripts/cleanTemp.js",
-    "poststart": "npm run svg:sprite",
-    "postbuild": "npm run svg:sprite",
+    "poststart": "npm run svg:sprite&&npm run svg:sprite:admin",
+    "postbuild": "npm run svg:sprite&&npm run svg:sprite:admin",
     "start": "cross-env APP_ENV=development APP_MODULE=front vite",
     "build": "cross-env APP_ENV=production APP_MODULE=front vite build",
     "start:admin": "cross-env APP_ENV=development APP_MODULE=admin vite",
@@ -17,6 +17,7 @@
     "lint:js": "eslint dev/**/*.js --fix",
     "lint:css": "stylelint dev/**/*.css app/**/*.css --fix",
     "svg:sprite": "svg-sprite -D www/dist/front -C svgsprite.config.json dev/front/icons/*.svg",
+    "svg:sprite:admin": "svg-sprite -D www/dist/admin -C svgsprite.config.json dev/admin/icons/*.svg",
     "test": "echo \"Error: no test specified\" && exit 1",
     "composer:update": "docker run -it --rm -v $(pwd):/app composer update",
     "composer:outdated": "docker run -it --rm -v $(pwd):/app composer outdated"

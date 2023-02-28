@@ -1,28 +1,53 @@
-@import "../../../node_modules/uikit/dist/css/uikit.css";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@layer base {
+  body {
+    @apply font-inter;
+  }
+
+  section {
+    @apply py-8 px-8;
+  }
+
+  p + p {
+    margin-top: 1em;
+  }
+
+  b,
+  strong {
+    @apply font-bold;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    @apply rounded transition focus:ring-green-600 focus:border-green-600;
+  }
+
+  input[type="checkbox"] {
+    @apply rounded focus:ring-0 focus:ring-transparent;
+  }
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  --header-height: 80px;
-}
+@layer components {
+  .textstyle-head-1 {
+    @apply text-4xl;
+  }
 
-p,
-ul,
-ol,
-dl,
-pre,
-address,
-fieldset,
-figure {
-  margin: 0;
-}
+  .textstyle-subhead-1 {
+    @apply text-xl;
+  }
 
-ul {
-  list-style: none;
+  .textstyle-label {
+    @apply font-bold;
+  }
+
+  .button {
+    @apply rounded bg-green-800 hover:bg-green-600 px-4 py-2 text-white transition;
+  }
+
+  .button-icon {
+    @apply rounded bg-green-800 hover:bg-green-600 p-2 text-white transition;
+  }
 }

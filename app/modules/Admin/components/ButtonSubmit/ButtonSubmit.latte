@@ -1,0 +1,13 @@
+{varType Nette\Forms\Controls\SubmitButton $input}
+
+{varType string $class}
+
+{default $class = null}
+
+<button
+    type="submit"
+    n:name="$input->getName()"
+    n:class="button, $class"
+>
+    {$input->getCaption()}
+</button>

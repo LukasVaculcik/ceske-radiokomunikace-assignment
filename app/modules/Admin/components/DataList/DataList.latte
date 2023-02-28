@@ -1,17 +1,28 @@
 <div class="data-list">
     <p n:if="count($data)==0"><br>Žádné záznamy nebyly nalezeny!</p>
 
-    <ul>
-        <li n:foreach="$data as $row">
-            <span><strong>{$row->name}</strong></span>
-            <a n:href="edit, $row->id">upravit</a>
-            <a n:href="delete, $row->id">smazat</a>
-            <a n:href="toggle, $row->id">
-                {if $row->is_visible}
-                    schovat
-                {else}
-                    zveřejnit
-                {/if}
+    <ul class="flex flex-col gap-2">
+        <li n:foreach="$data as $row" class="rounded border border-green-800 px-4 py-2 transition hover:bg-green-50 flex gap-2 items-center">
+            <span class="mr-auto"><strong>{$row->name}</strong></span>
+            <a n:href="edit, $row->id" title="Edit" class="button-icon">
+                {include '../Icon/Icon.latte', key: 'pencil', class: 'w-6 h-6'}
+            </a>
+
+            {default $isVisibleTitle = null}
+            {default $isVisibleIcon = null}
+            {if $row->is_visible}
+                {var $isVisibleTitle = 'Hide'}
+                {var $isVisibleIcon = 'eye-slash'}
+            {else}
+                {var $isVisibleTitle = 'Publish'}
+                {var $isVisibleIcon = 'eye'}
+            {/if}
+            <a n:href="toggle, $row->id" title="{$isVisibleTitle}" class="button-icon">
+                {include '../Icon/Icon.latte', key: $isVisibleIcon, class: 'w-6 h-6'}
+            </a>
+
+            <a n:href="delete, $row->id" title="Delete" class="button-icon">
+                {include '../Icon/Icon.latte', key: 'trash', class: 'w-6 h-6'}
             </a>
         </li>
     </ul>

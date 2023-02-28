@@ -3,11 +3,29 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-  /* @font-face {
-    font-family: "Gotham";
-    src: url(./etc/fonts/Gotham-Book.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  } */
+  body {
+    @apply font-inter;
+  }
+
+  section {
+    @apply py-8;
+  }
+
+  p + p {
+    margin-top: 1em;
+  }
+
+  b,
+  strong {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .textstyle-head-1 {
+    @apply text-4xl;
+  }
+  .textstyle-subhead-1 {
+    @apply text-xl;
+  }
 }
